@@ -50,14 +50,15 @@
 	<header role="banner">
 	
 		<a href="index.php"><div id="brand">
-			<div class="logo green"><img src="images/10k.png" alt="10k Weather"></div>
+			<div class="logo green"><img src="images/10k.png" alt="10K Weather"></div>
 			<span id="brandname">Weather</span>
 		</div></a>
 		
 		<div id="finder-container">
 			<input type="checkbox" id="finder-toggle"/>  
 			<form id="finder" name="locationFinder" method="get" action="index.php">
-				<input type="text" id="zipcode" name="address" placeholder="Enter City/State or Zip Code"><button type="submit" id="findersubmit" value="">&#x27A4;</button>
+				<label style="display:none" for="zipcode">Enter City/State or Zip Code</label>  
+				<input type="text" id="zipcode" name="address" placeholder="Enter City/State or Zip Code" title="Enter City/State or Zip Code"><button type="submit" id="findersubmit" value="">&#x27A4;</button>
 			</form>
 			<label class="location-finder" for="finder-toggle">Choose Location</label>  
 		</div>
@@ -88,7 +89,7 @@
 						    	<div class="col-100 grid-temp"><?php echo $current_temp; ?>&deg;</div>
 						    	<!-- weather icons from http://www.alessioatzeni.com/meteocons/ -->
 						    	<div class="col-100 grid-hilow"><span style="font-size: 13px; font-weight: normal; margin-left: -5px;">Low - High</span><br/><?php echo $temp_low; ?>&deg; - <?php echo $temp_hi; ?>&deg;</div>
-						    	<div class="col-100 grid-icon"><img src="images/icons/<?php echo $current_icon; ?>.svg" alt="<?php echo $current_weather; ?>"><span style="display: block; margin-bottom: 20px;"><?php echo $current_desc; ?></span></div>
+						    	<div class="col-100 grid-icon"><img src="images/icons/<?php echo $current_icon; ?>.svg" alt="<?php echo $current_desc; ?>"><span style="display: block; margin-bottom: 20px;"><?php echo $current_desc; ?></span></div>
 						    	<div class="grid-forecast""><?php echo $current_forecast; ?></div>
 						    </div>
 

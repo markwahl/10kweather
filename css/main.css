@@ -312,6 +312,11 @@
 			line-height: 2em;
 		}
 
+		nav ul a li {
+			text-decoration: underline !important;
+		}
+
+
 		nav {
 			float: none;
 			display: block;
