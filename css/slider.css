@@ -62,10 +62,10 @@ right: 0;
 nav a:last-child { width: 34%; }
 /* nav a:hover { background-color: #444; } */
 
-#a1 nav a.test { background-color: #7E9234; color: #fff; }
+#a1 nav a.slide { background-color: #7E9234; color: #fff; }
 
-#a2:target nav a.test,
-#a3:target nav a.test { background-color: #143D55; color: #fff; }
+#a2:target nav a.slide,
+#a3:target nav a.slide { background-color: #143D55; color: #fff; }
 
 #a1:target nav a:first-child,
 #a2:target nav a:nth-child(2),

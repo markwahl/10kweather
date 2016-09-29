@@ -6,7 +6,9 @@ if ($_GET['address'] != "") {
 	$address = urlencode($_GET['address']);
 	$address_json = file_get_contents("https://maps.googleapis.com/maps/api/geocode/json?address=$address&key=AIzaSyDvFkjTCs4WSoKZwjY5qJ6sWRpNjBWqiLk");
 	$address_obj = json_decode($address_json);
-	$fullLocation = 	$address_obj->results[0]->formatted_address;
+	$fullLocation = str_replace(', USA','',$address_obj->results[0]->formatted_address);
+	$commaCount = substr_count($fullLocation, ', ');
+	if ($commaCount > 1) { $fullLocation = explode(', ',$fullLocation,2); $fullLocation = $fullLocation[1]; }
 	$lat = $address_obj->results[0]->geometry->location->lat;
 	$lon = $address_obj->results[0]->geometry->location->lng;
 	$currentLocLink = "<a href='index.php' class='currentLink'>Return to Current Location</a>";
@@ -59,11 +61,11 @@ $clear = array("Sunny","Mostly Sunny","Clear","Mostly Clear","Hot");
 $wind = array("Blowing Dust","Blowing Sand","Windy");
 $ice = array("Patchy Ice Crystals","Areas Ice Crystals","Ice Crystals","Ice Fog","Patchy Freezing Fog","Areas Freezing Fog","Freezing Fog","Freezing Spray","Patchy Frost","Areas Frost","Frost");
 $partlysunny = array("Partly Sunny","Mostly Cloudy","Partly Cloudy","Increasing Clouds","Decreasing Clouds","Becoming Cloudy","Clearing","Gradual Clearing","Clearing Late","Becoming Sunny","A Few Clouds");
-$fog = array("Dense Fog","Fog");
+$fog = array("Dense Fog","Fog","Fog/Mist");
 $partlyfog = array("Patchy Fog","Areas Fog","Patchy Haze","Areas Haze","Haze","Patchy Ice Fog","Areas Ice Fog","Patchy Ash","Areas Ash");
 $smoke = array("Patchy Smoke","Areas Smoke","Smoke","Volcanic Ash");
 $cloudy = array("Cloudy","Cold","Overcast");
-$chancerain = array("Light Rain","Slight Chance Sleet","Chance Sleet","Slight Chance Rain Showers","Chance Rain Showers","Slight Chance Rain","Chance Rain","Slight Chance Drizzle","Chance Drizzle","Drizzle Likely","Drizzle","Slight Chance Rain/Snow","Chance Rain/Snow","Slight Chance Freezing Rain","Chance Freezing Rain","Slight Chance Freezing Drizzle","Chance Freezing Drizzle","Slight Chance Rain/Freezing Rain","Chance Rain/Freezing Rain","Slight Chance Rain/Sleet","Chance Rain/Sleet");
+$chancerain = array("Light Rain","Slight Chance Sleet","Chance Sleet","Slight Chance Rain Showers","Chance Rain Showers","Slight Chance Rain","Chance Rain","Slight Chance Drizzle","Chance Drizzle","Drizzle Likely","Drizzle","Slight Chance Rain/Snow","Chance Rain/Snow","Slight Chance Freezing Rain","Chance Freezing Rain","Slight Chance Freezing Drizzle","Chance Freezing Drizzle","Slight Chance Rain/Freezing Rain","Chance Rain/Freezing Rain","Slight Chance Rain/Sleet","Chance Rain/Sleet","Light Drizzle Fog/Mist","Light Drizzle");
 $rain = array("Sleet Likely","Sleet","Rain Showers Likely","Rain Showers","Rain Likely","Rain","Heavy Rain","Rain/Snow Likely","Rain/Snow","Freezing Rain Likely","Freezing Rain","Freezing Drizzle Likely","Freezing Drizzle","Rain/Freezing Rain Likely","Rain/Freezing Rain","Rain/Sleet Likely","Rain/Sleet");
 $blustery = array("Blustery","Breezy");
 $chancesnow = array("Slight Chance Snow","Chance Snow","Slight Chance Wintry Mix","Chance Wintry Mix","Slight Chance Wintry Mix","Chance Wintry Mix","Slight Chance Snow/Sleet","Chance Snow/Sleet");

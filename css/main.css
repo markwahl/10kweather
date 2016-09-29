@@ -14,6 +14,9 @@
 		height: 60px;
 		width: 100%;
 		float: left;
+		position:fixed; 
+		top:0px; 
+		z-index: 100;
 	}
 
 	header a {
@@ -115,6 +118,10 @@
 	.col-25 { width: 25%; }
 	.col-20 { width: 20%; }
 
+	h1 {
+		white-space: pre-line;
+	}
+
 	.multiday-table {
 		max-width:800px;
 	}
@@ -203,7 +210,7 @@
 		bottom: 0px;
 		background-color: #999;
 		padding:6px 20px;
-		font-size: 1.3em;
+		font-size: 1.5em;
 	}
 
 	footer .center {
@@ -211,6 +218,7 @@
 		text-align:center;
 		max-width: 400px;
 		display: inline-block;
+		white-space: pre-line;
 	}
 
 	.currentLink {
@@ -260,7 +268,7 @@
 		border-right: 0px;
 		width: 250px;
 		height: 28px;
-		font-size: 2em;
+		font-size: 1.7em;
 		padding: 3px;
 		display: inline-block;
 	}
@@ -279,7 +287,6 @@
 	@media (max-width: 768px) {
 
 		header {
-			height: 80px;
 		}
 
 		#brand {
@@ -317,6 +324,8 @@
 
 		nav a {
 			font-size: 1.4em;
+			padding-top:10px;
+			padding-bottom:10px;
 		}
 
 		nav ul {
@@ -338,8 +347,52 @@
 			height: 100%;
 			border: 1px solid red;
 		}
+
+		#finder-container {
+			position: absolute;
+			top:4px;
+			right:0px;
+		}
+		label.location-finder { 
+			font-size: 1em;
+		} 
+
+		#finder {
+		  display: none;
+		  position: absolute;
+		  top:-8px;
+		  right:95px;
+		  width: 250px;
+		}
+		#finder-toggle:checked + #finder {
+		  display: block;
+		}
+		#zipcode {
+			height: 20px;
+			font-size: 1.3em;
+
+			border: 1px solid #ccc;
+			border-right: 0px;
+			width: 225px;
+			padding: 3px;
+			display: inline-block;
+		}
+		#findersubmit {
+			border: 0;
+			font-size: 1.3em;
+			background-color: #fff;
+			display: inline-block;
+			color: #143D55;
+			margin-left: -30px;
+		  	cursor: pointer;
+		}
+
 		main {
 			margin-top: 30px;
+		}
+
+		h1 {
+			font-size: 1.7em;
 		}
 
 		.multiday .period {
@@ -365,7 +418,9 @@
 			display: none;
 		}
 
-
+		footer {
+			font-size: 1.2em;
+		}
 
 	.col-50, .col-33 { width: 100%; }
 
