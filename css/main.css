@@ -75,10 +75,6 @@
 		line-height: 60px;
 	}
 
-/*	nav ul li:hover {
-		background-color: #7E9234;
-	} */
-
 	main {
 		max-width: 1000px;
 		margin: 10px auto 0 auto;
@@ -198,9 +194,12 @@
 	.blue-dark { color: #143D55; }
 	.blue-light { color: #3087B4; }
 	.blue-lighter { color: #287AA9; }
-	.green { background-color: #7E9234; }
+	.green { background-color: #6a7b2c; }
+	/* .green { background-color: #7E9234; } */
 	.green-light { color: #96AD3E; }
-	.gray { color: #CCCCCC; }
+	.gray { color: #8a8a8a; }
+	/* .gray { color: #8a8a8a; } */
+
 						
 	footer {
 		width: 100%;
@@ -208,7 +207,7 @@
 		text-align: center;
 		position: fixed;
 		bottom: 0px;
-		background-color: #999;
+		background-color: #8a8a8a;
 		padding:6px 20px;
 		font-size: 1.5em;
 	}
@@ -242,7 +241,7 @@
 
 	label.location-finder {  
 	  cursor: pointer;
-	  background-color: #999;
+	  background-color: #8a8a8a;
 	  padding: 10px;
 	  height: 50px;
 	  color: #fff;
