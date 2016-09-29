@@ -1,0 +1,79 @@
+/* Basic Style/Positioning for all Pages */
+body { overflow-x: hidden; /* Hide the other pages */ }
+
+.pages,
+.page,
+.page .backbutton,
+.page .nextbutton  { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
+
+.page h1 { margin-top: 4em; /* Make it show below the nav */ }   
+
+.page .backbutton,
+.page .nextbutton { width: 50%; }
+
+.page .nextbutton { left: auto; right: 0; }
+
+/* Pages */
+#i2 { left: 100%; }
+#i3 { left: 200%; }
+
+
+/* Slide Effect */
+.pages {
+-webkit-transition: left 0.8s;
+-moz-transition: left 0.8s;
+-o-transition: left 0.8s;
+-ms-transition: left 0.8s;
+transition: left 0.8s;
+margin-top:80px;
+}
+
+#a1:target .pages { left: 0%; }
+#a2:target .pages { left: -100%; }
+#a3:target .pages { left: -200%; }
+
+/* Top Navigation */
+.asdnav {
+display: block;
+position: fixed;
+z-index: 1;
+top: 0;
+left: 0;
+right: 0;
+}
+
+
+.asdnav a {
+  font: 2em/1 helvetica, arial;
+  font-weight: bold;
+  text-decoration: none;
+  color: #aaa;
+  text-align: center;
+  background-color: #111;
+  display: inline-block;
+  width: 33%;
+  -moz-transition: background 1s;
+  -webkit-transition: background 1s;
+  -o-transition: background 1s;
+  -ms-transition: background 1s;
+  transition: background 1s;
+}
+
+nav a:last-child { width: 34%; }
+/* nav a:hover { background-color: #444; } */
+
+#a1 nav a.test { background-color: #7E9234; color: #fff; }
+
+#a2:target nav a.test,
+#a3:target nav a.test { background-color: #143D55; color: #fff; }
+
+#a1:target nav a:first-child,
+#a2:target nav a:nth-child(2),
+#a3:target nav a:last-child { background-color: #7E9234; color: #fff; }
+
+/* This is just make them less ugly 
+body { font-family: sans-serif; text-align: center; }
+h1 { font-size: 2em; }
+#i1 {  }
+#i2 {  }
+#i3 {  }

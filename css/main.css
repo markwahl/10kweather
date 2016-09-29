@@ -1,0 +1,372 @@
+	body {
+		font-size: 62.5%;
+		/* font-family: Verdana, Geneva, sans-serif; */
+		font-family: Helvetica, Arial, sans-serif;
+		margin: 0;
+		padding: 0;
+		background-color: #287AA9;
+		color: #fcfcfc;
+		overflow-x: hidden;
+	}
+
+	header {
+		background-color: #143D55;
+		height: 60px;
+		width: 100%;
+		float: left;
+	}
+
+	header a {
+		color: #fff;
+	}
+
+	#brand {
+		margin: 0;
+		font-size: 3em;
+		float:left;
+	}
+
+	.logo {
+		display: inline-block; 
+		padding:2px 5px; 
+		margin: 0 10px 0 20px; 
+		border-radius:0 0 7px 7px;
+		float:left;
+	}
+	.logo img {
+		height: 60px;
+	}
+
+	#brandname {
+		line-height: 2.1em;
+	}
+
+	nav {
+		float: right;
+		background-color: #143D55;
+		height: 60px;
+		margin-right: 20px;
+	}
+	nav a {
+		color: #fcfcfc;
+		font-size: 1.6em;
+		font-weight: none;
+		text-decoration: none;
+		padding-top: 22px;
+		padding-bottom: 22px;
+	}
+
+	nav ul {
+		width: 100%;
+		height: 60px;
+		text-align: center;
+		padding:0;
+		margin:0;
+	}
+
+	nav ul li {
+		display: inline-block;
+		padding: 0 20px;
+		font-weight: bold;
+		height: 60px;
+		line-height: 60px;
+	}
+
+/*	nav ul li:hover {
+		background-color: #7E9234;
+	} */
+
+	main {
+		max-width: 1000px;
+		margin: 10px auto 0 auto;
+		font-size: 1.6em;
+		padding: 10px;
+	}
+
+	#location-time, #weather-grid {
+		width: 100%;
+		margin: 0 auto;
+		white-space: nowrap;
+	}
+
+	.clear {
+		clear:both;
+	}
+	#location-time {
+		text-align: center;
+	}
+
+	#location-time h1 {
+		margin: 0;
+	}
+
+	[class*='col-'] {
+		float: left;
+	  	min-height: 1px;
+	  	text-align: center;
+		margin: 0;
+		padding: 0;
+	}
+
+	.col-100 { width: 100%; }
+	.col-66 { width: 66.6%; }
+	.col-50 { width: 50%; }
+	.col-33 { width: 33.3%; }
+	.col-25 { width: 25%; }
+	.col-20 { width: 20%; }
+
+	.multiday-table {
+		max-width:800px;
+	}
+
+	.multiday-table .Low {
+		background-color: #143D55;
+	}
+
+	.multiday-table .titles {
+		font-weight: bold;
+	}
+
+	.multiday {
+		border-bottom: 1px solid #fff;
+		text-align: left;
+		padding: 10px 5px;
+	}
+
+	.multiday .period {
+		width: 220px;
+		font-weight: bold;
+		display: inline-block;
+	}
+
+	.multiday .temp {
+		width: 100px;
+		display: inline-block;
+	}
+
+	.multiday .pop {
+		width: 100px;
+		display: inline-block;
+	}
+
+	.multiday .weather {
+		width: 100%;
+		display: inline-block;
+	}
+
+
+	.grid-temp {
+		font-size: 7.0em;
+		font-weight: bold;
+	}
+
+	.grid-icon {
+		margin-bottom: 0;
+	}
+
+	.grid-icon img {
+		width: 250px;
+	}
+
+	.grid-forecast {
+		background-color: #143D55;
+		border-radius: 5px;
+		padding: 10px;
+		max-width: 600px;
+		margin: 0 auto 70px auto;
+		white-space: pre-line;
+		text-align: left;
+		clear:both;
+	}
+
+	.grid-hilow {
+		font-size: 1.5em;
+		font-weight: bold;
+		margin-bottom: 30px;
+	}
+
+	.grid-data {
+	}
+
+	.blue-dark { color: #143D55; }
+	.blue-light { color: #3087B4; }
+	.blue-lighter { color: #287AA9; }
+	.green { background-color: #7E9234; }
+	.green-light { color: #96AD3E; }
+	.gray { color: #CCCCCC; }
+						
+	footer {
+		width: 100%;
+		margin-top: 20px;
+		text-align: center;
+		position: fixed;
+		bottom: 0px;
+		background-color: #999;
+		padding:6px 20px;
+		font-size: 1.3em;
+	}
+
+	footer .center {
+		margin: 0 auto;
+		text-align:center;
+		max-width: 400px;
+		display: inline-block;
+	}
+
+	.currentLink {
+		font-size: .9em;
+		text-decoration: none;
+		font-weight: bold;
+		color: #143D55;
+	}
+
+	.currentLink:hover {
+			text-decoration: underline
+	}
+	/* Finder Element */
+
+	#finder-container {
+		position: relative;
+		float:right;
+		margin-top:20px;
+		margin-right:20px;
+	}
+
+	label.location-finder {  
+	  cursor: pointer;
+	  background-color: #999;
+	  padding: 10px;
+	  height: 50px;
+	  color: #fff;
+	  border-radius: 5px;
+	  font-size: 1.5em;
+	  font-weight: bold;
+	}
+	#finder-toggle {
+	  display: none; /* hide the checkbox */
+	}
+	#finder {
+	  display: none;
+	  position: absolute;
+	  top:-10px;
+	  right:120px;
+	  width: 310px;
+	}
+	#finder-toggle:checked + #finder {
+	  display: block;
+	}
+	#zipcode {
+		border: 1px solid #ccc;
+		border-right: 0px;
+		width: 250px;
+		height: 28px;
+		font-size: 2em;
+		padding: 3px;
+		display: inline-block;
+	}
+	#findersubmit {
+		border: 0;
+		font-size: 1.8em;
+		background-color: #fff;
+		display: inline-block;
+		color: #143D55;
+		margin-left: -30px;
+	  	cursor: pointer;
+	}
+
+	/* Mediaqueries */
+
+	@media (max-width: 768px) {
+
+		header {
+			height: 80px;
+		}
+
+		#brand {
+			width: 100%;
+			display: block;
+			clear:both;
+		}
+
+		.logo {
+			border-radius: 0;
+			height: 50px;
+			display: inline-block; 
+			padding:5px; 
+			margin: 0 10px 0 0; 
+			float:left;
+		}
+
+		.logo img {
+			height: 50px;
+		}
+
+		#brandname {
+			line-height: 2em;
+		}
+
+		nav {
+			float: none;
+			display: block;
+			width: 100%;
+			border-top: 1px solid #ccc;
+			clear:both;
+			height: 36px;
+			line-height: 1em;
+		}
+
+		nav a {
+			font-size: 1.4em;
+		}
+
+		nav ul {
+			height: 36px;
+			text-align: center;
+			padding:0;
+			margin:0;
+		}
+
+		nav ul li {
+			display: inline-block;
+			padding: 0 20px;
+			font-weight: bold;
+			height: 36px;
+			line-height: 36px;
+		}
+
+		nav ul li a {
+			height: 100%;
+			border: 1px solid red;
+		}
+		main {
+			margin-top: 30px;
+		}
+
+		.multiday .period {
+			width: 60%;
+		}
+
+		.multiday .temp {
+			width: 20%;
+		}
+
+		.multiday .pop {
+			width: 20%;
+		}
+
+		.multiday .weather {
+			width: 100%;
+			display: block;
+			padding-top: 5px;
+			font-style: italic;
+		}
+
+		.titles .weather {
+			display: none;
+		}
+
+
+
+	.col-50, .col-33 { width: 100%; }
+
+	}
