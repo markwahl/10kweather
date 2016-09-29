@@ -197,7 +197,7 @@
 	.green { background-color: #6a7b2c; }
 	/* .green { background-color: #7E9234; } */
 	.green-light { color: #96AD3E; }
-	.gray { color: #8a8a8a; }
+	.gray { color: #757575; }
 	/* .gray { color: #8a8a8a; } */
 
 						
@@ -207,7 +207,7 @@
 		text-align: center;
 		position: fixed;
 		bottom: 0px;
-		background-color: #8a8a8a;
+		background-color: #757575;
 		padding:6px 20px;
 		font-size: 1.5em;
 	}
@@ -241,13 +241,14 @@
 
 	label.location-finder {  
 	  cursor: pointer;
-	  background-color: #8a8a8a;
+	  background-color: #757575;
 	  padding: 10px;
 	  height: 50px;
 	  color: #fff;
 	  border-radius: 5px;
 	  font-size: 1.5em;
 	  font-weight: bold;
+	  border:1px solid #999;
 	}
 	#finder-toggle {
 	  display: none; /* hide the checkbox */
