@@ -2,7 +2,7 @@
 
 ## 10K Weather Website Project
 
-This project displays current weather information and forecasts for a user's location and/or a submitted address value, and does so with a download size of less than 10Kb. The majority of the interactive elements are driven by CSS alone. Data is obtained from a number of open data API sources, parsed on the server-side in PHP, and rendered as HTML. Developed for the 10K Apart contest, September 2016.
+This project displays current weather information and forecasts for a user's location and/or a submitted address value, and does so with an initial download size of less than 10Kb. The majority of the interactive elements are driven by CSS alone. One Javascript function exists to defer loading of weather icon images until after initial page load. Data is obtained from a number of open data API sources, parsed on the server-side in PHP, and rendered as HTML. Developed for the 10K Apart contest, September 2016.
 
 ## Installation
 
@@ -33,6 +33,7 @@ In addition, other resources include:
 
 * The weather condition icons used in this project were created by Alessio Atzeni and sourced from Meteocons (http://www.alessioatzeni.com/meteocons/). 
 * The CSS slider mechanism to move between weather views originated from an example from Divya Manian at http://nimbupani.com/making-pure-css3-demos-better.html.
+* The image load deferrer is based on a function posted by Patrick Sexton at https://varvy.com/pagespeed/defer-images.html
 
 NOTE: This product includes GeoLite data created by MaxMind, available from http://www.maxmind.com.
 
