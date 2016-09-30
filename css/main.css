@@ -1,6 +1,5 @@
 	body {
 		font-size: 62.5%;
-		/* font-family: Verdana, Geneva, sans-serif; */
 		font-family: Helvetica, Arial, sans-serif;
 		margin: 0;
 		padding: 0;
@@ -36,6 +35,7 @@
 		border-radius:0 0 7px 7px;
 		float:left;
 	}
+
 	.logo img {
 		height: 60px;
 	}
@@ -50,6 +50,7 @@
 		height: 60px;
 		margin-right: 20px;
 	}
+
 	nav a {
 		color: #fcfcfc;
 		font-size: 1.6em;
@@ -123,6 +124,7 @@
 
 	.multiday-table {
 		max-width:800px;
+		padding-bottom: 100px;
 	}
 
 	.multiday-table .Low {
@@ -162,7 +164,7 @@
 
 
 	.grid-temp {
-		font-size: 7.0em;
+		font-size: 5.0em;
 		font-weight: bold;
 	}
 
@@ -171,7 +173,7 @@
 	}
 
 	.grid-icon img {
-		width: 250px;
+		width: 200px;
 	}
 
 	.grid-forecast {
@@ -233,8 +235,9 @@
 	}
 
 	.currentLink:hover {
-			text-decoration: underline
+		text-decoration: underline
 	}
+
 	/* Finder Element */
 
 	#finder-container {
@@ -319,11 +322,6 @@
 		#brandname {
 			line-height: 2em;
 		}
-
-		nav ul a li {
-			text-decoration: underline !important;
-		}
-
 
 		nav {
 			float: none;
@@ -464,3 +462,59 @@
 		}
 	}
 
+/* SLIDER CONTROLS */
+
+.pages,
+.page,
+.page .backbutton,
+.page .nextbutton  { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
+
+.page h1 { margin-top: 4em; /* Make it show below the nav */ }   
+
+.page .backbutton,
+.page .nextbutton { width: 50%; }
+
+.page .nextbutton { left: auto; right: 0; }
+
+/* Pages */
+#w2 { left: 100%; }
+#w3 { left: 200%; }
+
+
+/* Slide Effect */
+.pages {
+-webkit-transition: left 0.8s;
+-moz-transition: left 0.8s;
+-o-transition: left 0.8s;
+-ms-transition: left 0.8s;
+transition: left 0.8s;
+margin-top:80px;
+}
+
+#weather-1:target .pages { left: 0%; }
+#weather-2:target .pages { left: -100%; }
+#weather-3:target .pages { left: -200%; }
+
+/* Top Navigation */
+nav a {
+  -moz-transition: background .3s;
+  -webkit-transition: background .3s;
+  -o-transition: background .3s;
+  -ms-transition: background .3s;
+  transition: background .3s;
+}
+
+nav a:last-child { }
+
+#weather-1 nav a.slide { background-color: #6a7b2c; color: #fff; }
+
+#weather-2:target nav a.slide,
+#weather-3:target nav a.slide { background-color: #143D55; color: #fff; }
+
+#weather-1:target nav a:first-child,
+#weather-2:target nav a:nth-child(2),
+#weather-3:target nav a:last-child{ background-color: #6a7b2c; color: #fff; }
+
+#weather-1:target nav a:first-child li,
+#weather-2:target nav a:nth-child(2) li,
+#weather-3:target nav a:last-child li{ text-decoration: underline; }

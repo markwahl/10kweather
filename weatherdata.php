@@ -16,46 +16,43 @@ if ($_GET['address'] != "") {
 	$ip = $_SERVER['REMOTE_ADDR'];
 	if ($ip == '172.148.32.1') { $ip = '68.100.63.75'; }
 	$geo = unserialize(file_get_contents("http://www.geoplugin.net/php.gp?ip=$ip"));
-	// print_r ($geo);
-	$country = $geo["geoplugin_countryName"];
 	$city = $geo["geoplugin_city"];
 	$state = $geo["geoplugin_region"];
 	$fullLocation = $city.', '.$state;
 	$lat = $geo["geoplugin_latitude"];
 	$lon = $geo["geoplugin_longitude"];
-	//$lat = '41.4993';
-	//$lon = '-81.6944';
 }
 
 
 // GET TIMEZONE
 
 $json = file_get_contents("https://maps.googleapis.com/maps/api/timezone/json?location=$lat,$lon&timestamp=1458000000&key=AIzaSyAdmWkyqsySSXrCCvP-4_7MR8XWvC5qFoY");
-
-// echo $json; 
-// var_dump(json_decode($json));
-
 $obj = json_decode($json);
 $user_timezone = $obj->timeZoneId;
 date_default_timezone_set($user_timezone);
 
-// Weather.gov 7-Day
+// GET Weather.gov 7-Day DATA
 
 ini_set('user_agent', '10KWeather/1.0.0 (Web Application, 10k.grid.dev)');
 $wgov_json = file_get_contents("http://forecast.weather.gov/MapClick.php?lat=$lat&lon=$lon&unit=0&lg=english&FcstType=json");
 $wgov_obj = json_decode($wgov_json);
 
+// TODAY WEATHER
+
 $current_temp = $wgov_obj->currentobservation->Temp;
 $current_desc = $wgov_obj->currentobservation->Weather;
+$current_desc = trim($current_desc);
 $current_forecast = $wgov_obj->data->text[0];
 $temp_label1 = $wgov_obj->time->tempLabel[0];
 if ($temp_label1 == 'Low') {
-		$temp_low = $wgov_obj->data->temperature[0];
-		$temp_hi = $wgov_obj->data->temperature[1];
+	$temp_low = $wgov_obj->data->temperature[0];
+	$temp_hi = $wgov_obj->data->temperature[1];
 } else {
-		$temp_hi = $wgov_obj->data->temperature[0];
-		$temp_low = $wgov_obj->data->temperature[1];
+	$temp_hi = $wgov_obj->data->temperature[0];
+	$temp_low = $wgov_obj->data->temperature[1];
 }
+
+// SET ICONS
 
 $clear = array("Sunny","Mostly Sunny","Clear","Mostly Clear","Hot");
 $wind = array("Blowing Dust","Blowing Sand","Windy");
@@ -73,9 +70,6 @@ $flurries = array("Slight Chance Snow Showers","Chance Snow Showers","Snow Showe
 $snow = array("Blowing Snow","Snow Likely","Snow","Blizzard","Wintry Mix Likely","Wintry Mix","Wintry Mix Likely","Wintry Mix","Snow/Sleet Likely","Snow/Sleet");
 $chancethunderstorm = array("Isolated Thunderstorms","Slight Chance Thunderstorms","Chance Thunderstorms","Thunderstorm in Vicinity Light Rain","Thunderstorm in Vicinity");
 $thunderstorm = array("Thunderstorms Likely","Thunderstorms","Severe Tstms","Water Spouts");
-
-// echo $current_desc;
-$current_desc = trim($current_desc);
 
 if (in_array($current_desc, $clear)) { $current_icon = "clear"; }
 elseif (in_array($current_desc, $wind)) { $current_icon = "wind"; }
@@ -96,7 +90,7 @@ elseif (in_array($current_desc, $chancethunderstorm)) { $current_icon = "chancet
 elseif (in_array($current_desc, $thunderstorm)) { $current_icon = "thunderstorm"; }
 else { $current_icon = "uncertain"; }
 
-// Tomorrow
+// TOMORROW WEATHER
 
 if ($wgov_obj->time->tempLabel[0] == "Low") { 
 	$tomorrow_temp_hi = $wgov_obj->data->temperature[1];
@@ -110,7 +104,7 @@ if ($wgov_obj->time->tempLabel[0] == "Low") {
 	$tomorrow_weather = $wgov_obj->data->text[3];
 }
 
-// MULTIDAY
+// MULTIDAY WEATHER
 
 $multi_period = $wgov_obj->time->startPeriodName;
 $multi_date = $wgov_obj->time->startValidTime;

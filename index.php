@@ -4,79 +4,50 @@
 <!-- 10K Weather, by Mark Wahl, Copyright 2016 -->
 <html lang="en">
 <head>
-	<meta charset="utf-8">
-	
 	<title>10K Weather</title>
+	<meta charset="utf-8">
+	<meta name="description" content="10K Weather: Current weather and forecasts without all the extra junk!">
 	
-	<meta name="description" content="">
-	
-  <!-- Mobile-friendly viewport -->
+  	<!-- Mobile-friendly viewport -->
 	<meta name='viewport' content='content="width=device-width, maximum-scale=1.0, minimum-scale=1.0, initial-scale=1.0' />
 
    <!-- Style sheet link -->
-	<link href="css/main.css" rel="stylesheet" media="all">
-	<link href="css/slider.css" rel="stylesheet" media="all">
+	<link href="css/main.min.css" rel="stylesheet" media="all">
 	<link rel='shortcut icon' href='favicon.ico' type='image/x-icon'/ >
-
 </head>
+
 <body>
 
-	<header role="banner" style="position:fixed; top:0px; width: 100%; display: none;">
-	
-		<a href="index.php"><div id="brand">
-			<div class="logo green"><img src="images/10k.png" alt="10k Weather"></div>
-			<span id="brandname">Weather</span>
-		</div></a>
-		
-		<nav role="navigation">
-			<ul class="navbar">
-				<a href="#a1"><li>Today</li></a>
-				<a href="#a2"><li>Tomorrow</li></a>
-				<a href="#a3"><li>7 Day</li></a>
-			</ul>	
-		</nav>
-		
+	<div id="weather-1" class="slider-container">
+	    <div id="weather-2" class="slider-container">
+	        <div id="weather-3" class="slider-container">
 
-	</header>
-
-
-
-
-	<div id="a1" class="slider-container">
-	    <div id="a2" class="slider-container">
-	        <div id="a3" class="slider-container">
 	            <!-- Top Navigation -->
-	            
-	<header role="banner">
-	
-		<a href="index.php"><div id="brand">
-			<div class="logo green"><img src="images/10k.png" alt="10K Weather"></div>
-			<span id="brandname">Weather</span>
-		</div></a>
-		
-		<div id="finder-container">
-			<input type="checkbox" id="finder-toggle"/>  
-			<form id="finder" name="locationFinder" method="get" action="index.php">
-				<label style="display:none" for="zipcode">Enter City/State or Zip Code</label>  
-				<input type="text" id="zipcode" name="address" placeholder="Enter City/State or Zip Code" title="Enter City/State or Zip Code"><button type="submit" id="findersubmit" value="">&#x27A4;</button>
-			</form>
-			<label class="location-finder" for="finder-toggle">Choose Location</label>  
-		</div>
-
-		<nav role="navigation">
-			<ul class="navbar">
-				<a href="#a1" class="slide"><li>Today</li></a>
-				<a href="#a2"><li>Tomorrow</li></a>
-				<a href="#a3"><li>7 Day</li></a>
-			</ul>	
-		</nav>
-		
-
-	</header>
+				<header role="banner">
+					<a href="index.php"><div id="brand">
+						<div class="logo green"><img src="images/10k.png" alt="10K Weather"></div>
+						<span id="brandname">Weather</span>
+					</div></a>
+					<div id="finder-container">
+						<input type="checkbox" id="finder-toggle"/>  
+						<form id="finder" name="locationFinder" method="get" action="index.php">
+							<label style="display:none" for="zipcode">Enter City/State or Zip Code</label>  
+							<input type="text" id="zipcode" name="address" placeholder="Enter City/State or Zip Code" title="Enter City/State or Zip Code"><button type="submit" id="findersubmit" value="">&#x27A4;</button>
+						</form>
+						<label class="location-finder" for="finder-toggle">Choose Location</label>  
+					</div>
+					<nav role="navigation">
+						<ul class="navbar">
+							<a href="#weather-1" class="slide"><li>Today</li></a>
+							<a href="#weather-2"><li>Tomorrow</li></a>
+							<a href="#weather-3"><li>7 Day</li></a>
+						</ul>	
+					</nav>
+				</header>
 
 	            <div class="pages">
-	                <!-- First Page #a1 -->
-	                <div id="i1" class="page">
+	                <!-- First Page #weather-1 -->
+	                <div id="w1" class="page">
 						<main role="main">
 							
 							<div id="location-time">
@@ -98,8 +69,8 @@
 						</main><!-- End primary page content -->
 	                </div>
 	                
-	                <!-- Second Page #a2 -->
-	                <div id="i2" class="page">
+	                <!-- Second Page #weather-2 -->
+	                <div id="w2" class="page">
 						<main role="main">
 							
 							<div id="location-time">
@@ -119,8 +90,8 @@
 						</main><!-- End primary page content -->
 	                </div>
 	                
-	                <!-- Third Page #a3 -->
-	                <div id="i3" class="page">
+	                <!-- Third Page #weather-3 -->
+	                <div id="w3" class="page">
 						<main role="main" class="multiday-table">
 							
 							<div id="location-time">
@@ -133,28 +104,25 @@
 								<div class="col-100 multiday titles"><div class="period">DAY</div><div class="temp">TEMP</div><div class="pop">PREC</div><div class="weather">FORECAST</div>
 								</div>
 								<?php
-								$a = 0;
-								foreach ($multi_period as &$period) {
-									echo '<div class="col-100 multiday '.$multi_tempLabel[$a].'"><div class="period">';
-									echo $period;
-									echo ", ";
-									echo date("M j", strtotime($multi_date[$a]));
-									echo '</div><div class="temp">';
-									echo $multi_temperature[$a];
-									echo '&deg;f</div><div class="pop">';
-									if ($multi_pop[$a] == '') { echo '0'; }
-									else { echo $multi_pop[$a]; }	
-									echo '%</div><div class="weather">';
-									echo $multi_weather[$a];
-									echo '</div></div>';
-								$a++;
-								}
-
+									$a = 0;
+									foreach ($multi_period as &$period) {
+										echo '<div class="col-100 multiday '.$multi_tempLabel[$a].'"><div class="period">';
+										echo $period;
+										echo ", ";
+										echo date("M j", strtotime($multi_date[$a]));
+										echo '</div><div class="temp">';
+										echo $multi_temperature[$a];
+										echo '&deg;f</div><div class="pop">';
+										if ($multi_pop[$a] == '') { echo '0'; }
+										else { echo $multi_pop[$a]; }	
+										echo '%</div><div class="weather">';
+										echo $multi_weather[$a];
+										echo '</div></div>';
+									$a++;
+									}
 								?>
 						    </div>
-
 						    <div class="clear"></div>
-
 						</main><!-- End primary page content -->
 	                </div>
 	            </div>
