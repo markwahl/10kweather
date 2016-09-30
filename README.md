@@ -16,6 +16,12 @@ Note: This web app attempts to use the IP address of a given user's connection t
 * PHP 5.6
 * Access to the internet (none of the data will be available otherwise)
 
+## Browser and Device Compatibility
+
+* Functional in modern versions of Edge, Chrome, Firefox, Safari. 
+* Functional in IE9+. 
+* Successfully tested on iPhone5, iPhone6, Nexus 5X.
+
 ## Author
 
 Mark Wahl
