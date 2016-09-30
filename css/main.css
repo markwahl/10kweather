@@ -55,8 +55,7 @@
 		font-size: 1.6em;
 		font-weight: none;
 		text-decoration: none;
-		padding-top: 22px;
-		padding-bottom: 22px;
+		display: inline-block;
 	}
 
 	nav ul {
@@ -80,6 +79,10 @@
 		margin: 10px auto 0 auto;
 		font-size: 1.6em;
 		padding: 10px;
+	}
+
+	#weather-grid {
+		padding-bottom: 100px;
 	}
 
 	#location-time, #weather-grid {
@@ -176,7 +179,7 @@
 		border-radius: 5px;
 		padding: 10px;
 		max-width: 600px;
-		margin: 0 auto 70px auto;
+		margin: 0 auto;
 		white-space: pre-line;
 		text-align: left;
 		clear:both;
@@ -210,6 +213,7 @@
 		background-color: #757575;
 		padding:6px 20px;
 		font-size: 1.5em;
+		border-top: 1px solid #999;
 	}
 
 	footer .center {
@@ -218,6 +222,7 @@
 		max-width: 400px;
 		display: inline-block;
 		white-space: pre-line;
+		color: #fff;
 	}
 
 	.currentLink {
@@ -249,6 +254,7 @@
 	  font-size: 1.5em;
 	  font-weight: bold;
 	  border:1px solid #999;
+	  color: #fff;
 	}
 	#finder-toggle {
 	  display: none; /* hide the checkbox */
@@ -257,7 +263,7 @@
 	  display: none;
 	  position: absolute;
 	  top:-10px;
-	  right:120px;
+	  right:130px;
 	  width: 310px;
 	}
 	#finder-toggle:checked + #finder {
@@ -266,7 +272,7 @@
 	#zipcode {
 		border: 1px solid #ccc;
 		border-right: 0px;
-		width: 250px;
+		width: 270px;
 		height: 28px;
 		font-size: 1.7em;
 		padding: 3px;
@@ -280,10 +286,12 @@
 		color: #143D55;
 		margin-left: -30px;
 	  	cursor: pointer;
+	  	padding: 0;
 	}
 
 	/* Mediaqueries */
 
+	/* Mobile */	
 	@media (max-width: 768px) {
 
 		header {
@@ -329,8 +337,6 @@
 
 		nav a {
 			font-size: 1.4em;
-			padding-top:10px;
-			padding-bottom:10px;
 		}
 
 		nav ul {
@@ -430,3 +436,31 @@
 	.col-50, .col-33 { width: 100%; }
 
 	}
+
+
+		/* Small Mobile */	
+	@media (max-width: 350px) {
+
+		#brandname {
+			font-size: .7em;
+			line-height: 2.8em;
+		}
+		#finder {
+		  display: none;
+		  position: absolute;
+		  top:-10px;
+		  right:80px;
+		  width: 210px;
+		}
+		#zipcode {
+			width: 170px;
+			font-size: 1em;
+		}
+		#findersubmit {
+			margin-left: -20px;
+		}
+		#location-time p {
+			font-size: .8em;
+		}
+	}
+

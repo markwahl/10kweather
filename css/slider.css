@@ -51,7 +51,7 @@ nav a {
   transition: background .3s;
 }
 
-nav a:last-child { width: 34%; }
+nav a:last-child { }
 /* nav a:hover { background-color: #444; } */
 
 #a1 nav a.slide { background-color: #6a7b2c; color: #fff; }
