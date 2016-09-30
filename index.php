@@ -12,7 +12,7 @@
 	<meta name='viewport' content='content="width=device-width, maximum-scale=1.0, minimum-scale=1.0, initial-scale=1.0' />
 
    <!-- Style sheet link -->
-	<link href="css/main.css" rel="stylesheet" media="all">
+	<link href="css/main.min.css" rel="stylesheet" media="all">
 	<link rel='shortcut icon' href='favicon.ico' type='image/x-icon'/ >
 </head>
 
