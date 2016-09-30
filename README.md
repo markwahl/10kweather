@@ -2,7 +2,7 @@
 
 ## 10K Weather Website Project
 
-This project displays current weather information and forecasts for a user's location and/or a submitted address value, and does so with an initial download size of less than 10Kb. The majority of the interactive elements are driven by CSS alone. One Javascript function exists to defer loading of weather icon images until after initial page load. Data is obtained from a number of open data API sources, parsed on the server-side in PHP, and rendered as HTML. Developed for the 10K Apart contest, September 2016.
+This project displays current weather information and forecasts for a user's location based on network IP address and/or a submitted address value, and does so with an initial download size of less than 10Kb. The majority of the interactive elements are driven by CSS alone. One Javascript function exists to defer loading of weather icon images until after initial page load. Data is obtained from a number of open data API sources, parsed on the server-side in PHP, and rendered as HTML. Developed for the 10K Apart contest, September 2016.
 
 ## Installation
 
