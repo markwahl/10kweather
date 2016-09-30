@@ -29,7 +29,10 @@ A number of open source APIs are utilized in this project. These include:
 * National Weather Service Weather.gov API (http://www.weather.gov/ -- requires no key, but does require a user-agent to be set with the request)
 * GeoPlugin IP Address Geolocation API (http://www.geoplugin.com/)
 
-In addition, the weather condition icons used in this project were created by Alessio Atzeni and sourced from Meteocons (http://www.alessioatzeni.com/meteocons/). 
+In addition, other resources include:
+
+* The weather condition icons used in this project were created by Alessio Atzeni and sourced from Meteocons (http://www.alessioatzeni.com/meteocons/). 
+* The CSS slider mechanism to move between weather views originated from an example from Divya Manian at http://nimbupani.com/making-pure-css3-demos-better.html.
 
 NOTE: This product includes GeoLite data created by MaxMind, available from http://www.maxmind.com.
 
