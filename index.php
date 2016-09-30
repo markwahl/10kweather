@@ -12,7 +12,7 @@
 	<meta name='viewport' content='content="width=device-width, maximum-scale=1.0, minimum-scale=1.0, initial-scale=1.0' />
 
    <!-- Style sheet link -->
-	<link href="css/main.min.css" rel="stylesheet" media="all">
+	<link href="css/main.css" rel="stylesheet" media="all">
 	<link rel='shortcut icon' href='favicon.ico' type='image/x-icon'/ >
 </head>
 
@@ -25,7 +25,7 @@
 	            <!-- Top Navigation -->
 				<header role="banner">
 					<a href="index.php"><div id="brand">
-						<div class="logo green"><img src="images/10k.png" alt="10K Weather"></div>
+						<div class="logo"><img src="images/10k.png" alt="10K Weather"></div>
 						<span id="brandname">Weather</span>
 					</div></a>
 					<div id="finder-container">

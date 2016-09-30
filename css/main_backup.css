@@ -22,16 +22,21 @@
 	}
 
 	#brand {
+		margin: 0;
 		font-size: 3em;
 		float:left;
 	}
 
 	.logo {
+		display: inline-block; 
 		padding:2px 5px; 
 		margin: 0 10px 0 20px; 
 		border-radius:0 0 7px 7px;
 		float:left;
-		background-color: #6a7b2c;
+	}
+
+	.logo img {
+		height: 60px;
 	}
 
 	#brandname {
@@ -46,12 +51,17 @@
 	}
 
 	nav a {
-		color: #fff;
+		color: #fcfcfc;
 		font-size: 1.6em;
+		font-weight: none;
+		text-decoration: none;
 		display: inline-block;
 	}
 
 	nav ul {
+		width: 100%;
+		height: 60px;
+		text-align: center;
 		padding:0;
 		margin:0;
 	}
@@ -60,12 +70,13 @@
 		display: inline-block;
 		padding: 0 20px;
 		font-weight: bold;
+		height: 60px;
 		line-height: 60px;
 	}
 
 	main {
 		max-width: 1000px;
-		margin: 10px auto;
+		margin: 10px auto 0 auto;
 		font-size: 1.6em;
 		padding: 10px;
 	}
@@ -78,16 +89,17 @@
 		width: 100%;
 		margin: 0 auto;
 		white-space: nowrap;
-		text-align: center;
 	}
 
 	.clear {
 		clear:both;
 	}
+	#location-time {
+		text-align: center;
+	}
 
 	#location-time h1 {
 		margin: 0;
-		white-space: pre-line;
 	}
 
 	[class*='col-'] {
@@ -99,6 +111,15 @@
 	}
 
 	.col-100 { width: 100%; }
+	.col-66 { width: 66.6%; }
+	.col-50 { width: 50%; }
+	.col-33 { width: 33.3%; }
+	.col-25 { width: 25%; }
+	.col-20 { width: 20%; }
+
+	h1 {
+		white-space: pre-line;
+	}
 
 	.multiday-table {
 		max-width:800px;
@@ -119,28 +140,35 @@
 		padding: 10px 5px;
 	}
 
-	.multiday div { display: inline-block; }
-
-	.period {
+	.multiday .period {
 		width: 220px;
 		font-weight: bold;
+		display: inline-block;
 	}
 
-	.temp {
+	.multiday .temp {
 		width: 100px;
+		display: inline-block;
 	}
 
-	.pop {
+	.multiday .pop {
 		width: 100px;
+		display: inline-block;
 	}
 
 	.multiday .weather {
 		width: 100%;
+		display: inline-block;
 	}
+
 
 	.grid-temp {
 		font-size: 5.0em;
 		font-weight: bold;
+	}
+
+	.grid-icon {
+		margin-bottom: 0;
 	}
 
 	.grid-icon img {
@@ -163,9 +191,23 @@
 		font-weight: bold;
 		margin-bottom: 30px;
 	}
+
+	.grid-data {
+	}
+
+	.blue-dark { color: #143D55; }
+	.blue-light { color: #3087B4; }
+	.blue-lighter { color: #287AA9; }
+	.green { background-color: #6a7b2c; }
+	/* .green { background-color: #7E9234; } */
+	.green-light { color: #96AD3E; }
+	.gray { color: #757575; }
+	/* .gray { color: #8a8a8a; } */
+
 						
 	footer {
 		width: 100%;
+		margin-top: 20px;
 		text-align: center;
 		position: fixed;
 		bottom: 0px;
@@ -176,6 +218,7 @@
 	}
 
 	footer .center {
+		margin: 0 auto;
 		text-align:center;
 		max-width: 400px;
 		display: inline-block;
@@ -199,7 +242,8 @@
 	#finder-container {
 		position: relative;
 		float:right;
-		margin:20px 20px 0 0;
+		margin-top:20px;
+		margin-right:20px;
 	}
 
 	label.location-finder {  
@@ -212,6 +256,7 @@
 	  font-size: 1.5em;
 	  font-weight: bold;
 	  border:1px solid #999;
+	  color: #fff;
 	}
 	#finder-toggle {
 	  display: none; /* hide the checkbox */
@@ -228,6 +273,7 @@
 	}
 	#zipcode {
 		border: 1px solid #ccc;
+		border-right: 0px;
 		width: 270px;
 		height: 28px;
 		font-size: 1.7em;
@@ -250,12 +296,22 @@
 	/* Mobile */	
 	@media (max-width: 768px) {
 
+		header {
+		}
+
+		#brand {
+			width: 100%;
+			display: block;
+			clear:both;
+		}
+
 		.logo {
 			border-radius: 0;
 			height: 50px;
 			display: inline-block; 
-			padding: 5px; 
+			padding:5px; 
 			margin: 0 10px 0 0; 
+			float:left;
 		}
 
 		.logo img {
@@ -281,10 +337,17 @@
 		}
 
 		nav ul {
+			height: 36px;
 			text-align: center;
+			padding:0;
+			margin:0;
 		}
 
 		nav ul li {
+			display: inline-block;
+			padding: 0 20px;
+			font-weight: bold;
+			height: 36px;
 			line-height: 36px;
 		}
 
@@ -298,24 +361,38 @@
 			top:4px;
 			right:0px;
 		}
-
 		label.location-finder { 
 			font-size: 1em;
 		} 
 
 		#finder {
+		  display: none;
+		  position: absolute;
 		  top:-8px;
 		  right:95px;
 		  width: 250px;
 		}
+		#finder-toggle:checked + #finder {
+		  display: block;
+		}
 		#zipcode {
 			height: 20px;
 			font-size: 1.3em;
+
+			border: 1px solid #ccc;
+			border-right: 0px;
 			width: 225px;
+			padding: 3px;
+			display: inline-block;
 		}
 		#findersubmit {
+			border: 0;
 			font-size: 1.3em;
+			background-color: #fff;
+			display: inline-block;
+			color: #143D55;
 			margin-left: -30px;
+		  	cursor: pointer;
 		}
 
 		main {
@@ -326,15 +403,15 @@
 			font-size: 1.7em;
 		}
 
-		.period {
+		.multiday .period {
 			width: 60%;
 		}
 
-		.temp {
+		.multiday .temp {
 			width: 20%;
 		}
 
-		.pop {
+		.multiday .pop {
 			width: 20%;
 		}
 
@@ -352,6 +429,9 @@
 		footer {
 			font-size: 1.2em;
 		}
+
+	.col-50, .col-33 { width: 100%; }
+
 	}
 
 
@@ -363,6 +443,8 @@
 			line-height: 2.8em;
 		}
 		#finder {
+		  display: none;
+		  position: absolute;
 		  top:-10px;
 		  right:80px;
 		  width: 210px;
@@ -382,9 +464,16 @@
 /* SLIDER CONTROLS */
 
 .pages,
-.page { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
+.page,
+.page .backbutton,
+.page .nextbutton  { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
 
 .page h1 { margin-top: 4em; /* Make it show below the nav */ }   
+
+.page .backbutton,
+.page .nextbutton { width: 50%; }
+
+.page .nextbutton { left: auto; right: 0; }
 
 /* Pages */
 #w2 { left: 100%; }
