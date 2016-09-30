@@ -13,8 +13,8 @@ Note: This web app attempts to use the IP address of a given user's connection t
 
 ## Requirements
 
-PHP 5.6
-Access to the internet (none of the data will be available otherwise)
+* PHP 5.6
+* Access to the internet (none of the data will be available otherwise)
 
 ## Author
 
