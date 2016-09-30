@@ -12,8 +12,6 @@
 		background-color: #143D55;
 		height: 60px;
 		width: 100%;
-		position:fixed; 
-		top:0px; 
 		z-index: 100;
 	}
 
@@ -245,6 +243,56 @@
 	  	padding: 0;
 	}
 
+	/* SLIDER CONTROLS */
+
+	.pages,
+	.page { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
+
+	.page h1 { margin-top: 4em; /* Make it show below the nav */ }   
+
+	/* Pages */
+	#w2 { left: 100%; }
+	#w3 { left: 200%; }
+
+
+	/* Slide Effect */
+	.pages {
+	-webkit-transition: left 0.8s;
+	-moz-transition: left 0.8s;
+	-o-transition: left 0.8s;
+	-ms-transition: left 0.8s;
+	transition: left 0.8s;
+	margin-top:80px;
+	}
+
+	#weather-1:target .pages { left: 0%; }
+	#weather-2:target .pages { left: -100%; }
+	#weather-3:target .pages { left: -200%; }
+
+	/* Top Navigation */
+	nav a {
+	  -moz-transition: background .3s;
+	  -webkit-transition: background .3s;
+	  -o-transition: background .3s;
+	  -ms-transition: background .3s;
+	  transition: background .3s;
+	}
+
+	nav a:last-child { }
+
+	#weather-1 nav a.slide { background-color: #6a7b2c; color: #fff; }
+
+	#weather-2:target nav a.slide,
+	#weather-3:target nav a.slide { background-color: #143D55; color: #fff; }
+
+	#weather-1:target nav a:first-child,
+	#weather-2:target nav a:nth-child(2),
+	#weather-3:target nav a:last-child{ background-color: #6a7b2c; color: #fff; }
+
+	#weather-1:target nav a:first-child li,
+	#weather-2:target nav a:nth-child(2) li,
+	#weather-3:target nav a:last-child li{ text-decoration: underline; }
+
 	/* Mediaqueries */
 
 	/* Mobile */	
@@ -278,19 +326,16 @@
 
 		nav a {
 			font-size: 1.4em;
+			height: 36px;
 		}
 
 		nav ul {
 			text-align: center;
+			line-height: 36px;
 		}
 
 		nav ul li {
 			line-height: 36px;
-		}
-
-		nav ul li a {
-			height: 100%;
-			border: 1px solid red;
 		}
 
 		#finder-container {
@@ -318,9 +363,7 @@
 			margin-left: -30px;
 		}
 
-		main {
-			margin-top: 30px;
-		}
+		.pages { margin-top: 100px; }
 
 		h1 {
 			font-size: 1.7em;
@@ -379,52 +422,3 @@
 		}
 	}
 
-/* SLIDER CONTROLS */
-
-.pages,
-.page { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
-
-.page h1 { margin-top: 4em; /* Make it show below the nav */ }   
-
-/* Pages */
-#w2 { left: 100%; }
-#w3 { left: 200%; }
-
-
-/* Slide Effect */
-.pages {
--webkit-transition: left 0.8s;
--moz-transition: left 0.8s;
--o-transition: left 0.8s;
--ms-transition: left 0.8s;
-transition: left 0.8s;
-margin-top:80px;
-}
-
-#weather-1:target .pages { left: 0%; }
-#weather-2:target .pages { left: -100%; }
-#weather-3:target .pages { left: -200%; }
-
-/* Top Navigation */
-nav a {
-  -moz-transition: background .3s;
-  -webkit-transition: background .3s;
-  -o-transition: background .3s;
-  -ms-transition: background .3s;
-  transition: background .3s;
-}
-
-nav a:last-child { }
-
-#weather-1 nav a.slide { background-color: #6a7b2c; color: #fff; }
-
-#weather-2:target nav a.slide,
-#weather-3:target nav a.slide { background-color: #143D55; color: #fff; }
-
-#weather-1:target nav a:first-child,
-#weather-2:target nav a:nth-child(2),
-#weather-3:target nav a:last-child{ background-color: #6a7b2c; color: #fff; }
-
-#weather-1:target nav a:first-child li,
-#weather-2:target nav a:nth-child(2) li,
-#weather-3:target nav a:last-child li{ text-decoration: underline; }

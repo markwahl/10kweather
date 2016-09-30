@@ -104,6 +104,26 @@ if ($wgov_obj->time->tempLabel[0] == "Low") {
 	$tomorrow_weather = $wgov_obj->data->text[3];
 }
 
+if (in_array($tomorrow_weather_short, $clear)) { $tomorrow_icon = "clear"; }
+elseif (in_array($tomorrow_weather_short, $wind)) { $tomorrow_icon = "wind"; }
+elseif (in_array($tomorrow_weather_short, $ice)) { $tomorrow_icon = "ice"; }
+elseif (in_array($tomorrow_weather_short, $partlysunny)) { $tomorrow_icon = "partlysunny"; }
+elseif (in_array($tomorrow_weather_short, $partlyfog)) { $tomorrow_icon = "partlyfog"; }
+elseif (in_array($tomorrow_weather_short, $smoke)) { $tomorrow_icon = "smoke"; }
+elseif (in_array($tomorrow_weather_short, $fog)) { $tomorrow_icon = "fog"; }
+elseif (in_array($tomorrow_weather_short, $partlyfog)) { $tomorrow_icon = "partlyfog"; }
+elseif (in_array($tomorrow_weather_short, $cloudy)) { $tomorrow_icon = "cloudy"; }
+elseif (in_array($tomorrow_weather_short, $chancerain)) { $tomorrow_icon = "chancerain"; }
+elseif (in_array($tomorrow_weather_short, $rain)) { $tomorrow_icon = "rain"; }
+elseif (in_array($tomorrow_weather_short, $blustery)) { $tomorrow_icon = "blustery"; }
+elseif (in_array($tomorrow_weather_short, $chancesnow)) { $tomorrow_icon = "chancesnow"; }
+elseif (in_array($tomorrow_weather_short, $flurries)) { $tomorrow_icon = "flurries"; }
+elseif (in_array($tomorrow_weather_short, $snow)) { $tomorrow_icon = "snow"; }
+elseif (in_array($tomorrow_weather_short, $chancethunderstorm)) { $tomorrow_icon = "chancethunderstorm"; }
+elseif (in_array($tomorrow_weather_short, $thunderstorm)) { $tomorrow_icon = "thunderstorm"; }
+else { $tomorrow_icon = "uncertain"; }
+
+
 // MULTIDAY WEATHER
 
 $multi_period = $wgov_obj->time->startPeriodName;
@@ -112,5 +132,25 @@ $multi_tempLabel = $wgov_obj->time->tempLabel;
 $multi_temperature = $wgov_obj->data->temperature;
 $multi_pop = $wgov_obj->data->pop;
 $multi_weather = $wgov_obj->data->weather;
+
+
+// CREATE MULTIDAY TABLE
+
+$a = 0;
+foreach ($multi_period as &$period) { 
+	$multiday .= '<div class="col-100 multiday '.$multi_tempLabel[$a].'"><div class="period">'; 
+	$multiday .= $period;
+	$multiday .=  ', ';
+	$multiday .= date("M j", strtotime($multi_date[$a])); 
+	$multiday .= '</div><div class="temp">'; 
+	$multiday .= $multi_temperature[$a];
+	$multiday .= '&deg;f</div><div class="pop">'; 
+	if ($multi_pop[$a] == '') { $multiday .= '0'; } 
+	else { $multiday .= $multi_pop[$a]; }
+	$multiday .= '%</div><div class="weather">'; 
+	$multiday .= $multi_weather[$a];
+	$multiday .= '</div></div>';
+
+	$a++;}
 
 ?>
